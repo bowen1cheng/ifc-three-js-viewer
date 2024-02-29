@@ -204,35 +204,3 @@ input[type="file"] {
   opacity: 1;
   transform: translate(-50%,calc(-160%));
 }
-
-#help-panel{
-  display: grid;
-  text-align: center;
-  visibility: hidden;
-  background-color: white;
-  padding: 6px 8px;
-  border-radius: 4px;
-  z-index: 3 !important;
-  position: absolute;
-  right: 10px;
-  top: 60px;
-}
-#help-panel.is-active{
-  visibility: visible;
-}
-
-.help-label{
-  grid-column: 2;
-  background-color: white;
-  align-self: center;
-  text-align: start;
-  margin: 0px 12px;
-  font-size: 16px;
-}
-
-.help-image{
-  background-color: white;
-  grid-column: 1;
-  align-self: center;
-  margin: 6px 0px;
-}
