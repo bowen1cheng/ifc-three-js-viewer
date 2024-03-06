@@ -1,206 +1,57 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #242424;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  color: #242424;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #242424;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #242424;
 }
 
 html,
 body {
-  overflow: hidden;
-}
-b{
-  background-color: white;
-  font-weight: 700;
+    overflow: hidden;
 }
 
 #three-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  outline: none;
-  z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: 2;
 }
 
 #toolbox {
-  z-index: 3 !important;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  border-radius: 4px;
+    z-index: 3 !important;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
 }
 
 input[type="file"] {
-  display: none;
+    display: none;
 }
 
-.custom-icon {
-  color: #242424;
-  background-color: white;
-}
-
-.custom-icon.is-active {
-  color: white;
-  background-color: #F7C702;
-}
-
-.custom-button {
-  background-color: white;
-  padding: 6px 12px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  display: inline-block;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.custom-button.is-active {
-  border: 1px solid #F7C702;
-  background-color: #F7C702;
+.custom-button:not(#file-input) {
+    display: none;
 }
 
 /* Tooltip text */
-.custom-button .tooltiptext {
-  background-color: white;
-  visibility: hidden;
-  text-align: center;
-  width: 150px;
-  border-radius: 4px;
-  position: absolute;
-  top: 25%;
-  right: 105%;
+.custom-button:not(#file-input) .tooltiptext {
+    visibility: hidden;
 }
 
-.custom-button .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 35%;
-  left: 100%;
-  margin-left: -1px;
-  border-width: 6px;
-  border-style: solid;
-  border-color: transparent transparent transparent white;
+#file-input {
+    background-color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
-/* Show the tooltip text when you mouse over the tooltip container */
-.custom-button:hover .tooltiptext {
-  visibility: visible;
-}
-
-.measurementLabel {
-  background-color: white;
-  padding: 4px;
-  border-radius: 4px;
-  z-index: 2 !important;
-}
-
-#model-info {
-  width: 25%;
-  max-height: 100%;
-  overflow: auto !important;
-  visibility: hidden;
-  background-color: white;
-  padding: 6px 12px;
-  border-radius: 4px;
-  z-index: 3 !important;
-  position: absolute;
-  top: 10px;
-  left: 0px;
-}
-
-#model-info.is-active {
-  visibility: visible !important;
-}
-
-.custom-hint {
-  text-align: center;
-  visibility: hidden;
-  background: white;
-  border: 2px solid white;
-  padding: 6px 12px;
-  border-radius: 4px;
-  z-index: 3 !important;
-  position: absolute;
-  bottom: 25px;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
-#measuring-hint.is-active {
-  visibility: visible !important;
-}
-#annotation-hint.is-active {
-  visibility: visible !important;
-}
-
-#annotation-form {
-  display: grid;
-  text-align: center;
-  visibility: hidden;
-  background-color: white;
-  padding: 12px 12px;
-  border-radius: 4px;
-  z-index: 3 !important;
-  position: absolute;
-  right: 10px;
-  top: 60px;
-}
-
-#annotation-comment{
-  grid-column: 1 / span 2;
-  grid-row: 1;
-  background-color: #f0f0f0;
-  padding: 4px;
-  color: #242424;
-  border: 2px solid #242424;
-  border-radius: 4px;
-  margin-bottom: 6px;
-  text-align: left;
-  resize: none;
-}
-#save-annotation-button{
-  grid-column: 2;
-  grid-row: 2;
-  background-color: #F7C702;
-  border-radius: 6px;
-  border-width: 0px;
-  color: white;
-  padding: 4px 12px;
-  text-align: center;
-  margin-left: 6px;
-}
-#cancel-annotation-button{
-  grid-column: 1;
-  grid-row: 2;
-  background-color: #242424;
-  border-radius: 6px;
-  color: white;
-  padding: 4px 12px;
-  text-align: center;
-}
-
-#annotation-form.is-active {
-  visibility: visible !important;
-}
-
-#annotation-display{
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: white;
-  border: 2px solid #242424;
-  border-radius: 4px;
-  padding: 10px;
-  transition: opacity 0.3s, transform 0.3s;
-  opacity: 0;
-  transform: translate(-50%,-180%);
-  z-index: 3 !important;
-}
-#annotation-display.is-active{
-  opacity: 1;
-  transform: translate(-50%,calc(-160%));
-}
