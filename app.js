@@ -116,7 +116,7 @@ const renderer = new WebGLRenderer({
 
 renderer.setSize(size.width, size.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-renderer.setClearColor(0xffffff,1.0); // 设置背景颜色为白色
+renderer.setClearColor(0xffffff, 1.0); // 设置背景颜色为纯白色
 
 const labelRenderer = new CSS2DRenderer()
 labelRenderer.setSize(window.innerWidth, window.innerHeight)
@@ -126,13 +126,13 @@ labelRenderer.domElement.style.pointerEvents = 'none'
 document.body.appendChild(labelRenderer.domElement)
 
 //Creates grids and axes in the scene
-const grid = new GridHelper(50, 30);
-scene.add(grid);
+// const grid = new GridHelper(50, 30);
+// scene.add(grid);
 
-const axes = new AxesHelper();
-axes.material.depthTest = false;
-axes.renderOrder = 1;
-scene.add(axes);
+// const axes = new AxesHelper();
+// axes.material.depthTest = false;
+// axes.renderOrder = 1;
+// scene.add(axes);
 
 //Creates the orbit controls (to navigate the scene)
 const controls = new OrbitControls(camera, threeCanvas);
