@@ -116,7 +116,7 @@ const renderer = new WebGLRenderer({
 
 renderer.setSize(size.width, size.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-renderer.setClearColor(0xffffff); // 设置背景颜色为白色
+renderer.setClearColor(0xffffff,1.0); // 设置背景颜色为白色
 
 const labelRenderer = new CSS2DRenderer()
 labelRenderer.setSize(window.innerWidth, window.innerHeight)
